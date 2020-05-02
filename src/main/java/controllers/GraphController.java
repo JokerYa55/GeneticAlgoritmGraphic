@@ -33,7 +33,7 @@ public class GraphController extends AnchorPane {
     private static final int COUNT = 50;
     PopulationInterface population;
     private static final double A = 0.1;
-    private static final double B = 10.5;
+    private static final double B = 5;
     private static final double DELTA_X = (B - A) / COUNT;
     private Parent root;
     Double[] x = new Double[COUNT];
@@ -183,7 +183,7 @@ public class GraphController extends AnchorPane {
         try {
             log.info(String.format("action = %s", actionEvent));
             CompletableFuture future = CompletableFuture.runAsync(() -> {
-                for (int i = 0; i < 20000; i++) {
+                for (int i = 0; i < 200; i++) {
                     population.nextStep();
                 }
             });
